@@ -5,7 +5,7 @@
 <style>
 p {
   text-align: center;
-  font-size: 60px;
+  font-size: 30px;
   margin-top: 0px;
 }
 </style>
@@ -15,16 +15,23 @@ p {
 <img src="../images/statsoxon.png" width="200"
         >
 
-  <h2>
-Practical DDL Countdown</h2>
+  <h1>
+Practical DDL Countdown</h1>
+
+<h3>Note 1: According to the latest email from the Department, the deadline has been pushed to the noon of 25 Mar.<br> Note 2: We have set the midnight of 17 Mar as the lab deadline, and midnight of 20 Mar as the write-up and hand-in deadline.
+</h3>
 
 For further information, <a href='https://www.kaggle.com/parleypy'>  check here </a>
 </center>
-<p id="demo"></p>
+Countdown to the lab deadline: <p id="count1"></p>
+
+
+Countdown to the hand-in deadline: <p id="count2"></p>
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Mar 17, 2020 23:59:59").getTime();
+var countDownDate = new Date("Mar 20, 2020 23:59:59").getTime();
+//var countDownDate2 = new Date("Mar 22, 2020 23:59:59").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -34,21 +41,24 @@ var x = setInterval(function() {
     
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
-    
+//  var distance2 = countDownDate2 - now;
+
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "days" +"<br>"+'and'+ "<br>"+ hours + "h"
-  + minutes + "m " + seconds + "s ";
-    
+  var days2=days-3;
+
+  document.getElementById("count1").innerHTML = days + " days " +'and '+ hours + " hours "
+  + minutes + " minutes " + seconds + " seconds ";
+
+  document.getElementById("count2").innerHTML = days2 + " days " +' and '+ hours + " hours "
+  + minutes + " minutes " + seconds + " seconds ";
   // If the count down is over, write some text 
-  if (distance < 1000*60*60*24) {
+  if (days2 < 1) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "Less than one day left!"+"<br>"+ hours + "h"
+    document.getElementById("count2").innerHTML = "Less than one day left!"+"<br>"+ hours + "h"
   + minutes + "m " + seconds + "s ";
   }
 }, 1000);
