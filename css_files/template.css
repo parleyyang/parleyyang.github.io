@@ -1,0 +1,121 @@
+#absolute { position: absolute; left: 0px; top: 0px; z-index: 1; }
+
+body { 
+ font-family: Ariel, Helvetica, Geneva, Swiss, SunSans-Regular;
+      font-size: 12pt;
+      font-style: normal; 
+      font-weight: normal;  
+      line-height: normal; 
+      color: #000000;
+}
+
+#everything { 
+        width: 1000px;
+}
+
+#sidebar {
+	position: relative;
+        font-size: 12pt;
+        width: 180px;
+        padding: 6px;
+        margin-right: 60px;
+        padding-top: 25px;
+        float: right;
+        text-align: left;
+        background: rgb(216, 191, 216);
+        }
+
+#content {
+        width: 650px;
+        float: left;
+        padding: 00px;
+        margin-left: 60px;
+        text-align: left;
+        /*padding-right: 100px;*/
+        background: #ffffff3f;
+        }
+
+
+#header table {
+        font-size: 13pt;
+}
+
+
+#content h1 {
+        font-size: 16pt;
+        font-weight: bold;
+}
+
+#content h2 { 
+      font-size: 14pt;
+      font-weight: bold;  
+}
+
+#content h3 { 
+      font-size: 13pt;
+      font-weight: bold;  
+}
+
+#content h4 { 
+      font-size: 13pt;
+      font-weight: bold;  
+}
+
+#content p {
+        margin-top: 0pt;
+        margin-bottom: 6pt;
+}
+
+#content table {  
+        font-size: 12pt;
+}
+       
+
+#footer {
+        text-align: center;
+}
+
+img.floatRight { 
+    float: right; 
+    margin: 5px; 
+}
+
+a:link {
+        color: rgb(82, 126, 221); 
+        text-decoration: underline;
+        font-style: italic }
+
+a.link2 {
+        color: rgb(255,250,250); 
+        text-decoration: none;
+        font-style: italic }
+
+a:visited {
+        color: #4f7cee; 
+        text-decoration: underline }
+a:hover {
+        color: #000000; 
+        text-decoration: underline; 
+        background: #e6e6e6}
+
+.pushable {
+  background: hsl(340deg 100% 32%);
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+.front {
+  display: block;
+  padding: 6px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: hsl(345deg 100% 47%);
+  color: white;
+  transform: translateY(-6px);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+}
