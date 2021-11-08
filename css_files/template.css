@@ -99,7 +99,7 @@ a:hover {
         background: #e6e6e6}
 
 .pushable {
-  background: hsl(340deg 100% 32%);
+  background: rgb(255,187,183);
   border: none;
   border-radius: 12px;
   padding: 0;
@@ -111,11 +111,36 @@ a:hover {
   padding: 6px 20px;
   border-radius: 8px;
   font-size: 1rem;
-  background: hsl(345deg 100% 47%);
+  background: rgb(255,187,183);
   color: white;
   transform: translateY(-6px);
 }
-
+.pushable2 {
+  background: rgb(255,144,165);
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+.front2 {
+  display: block;
+  padding: 6px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgb(255,144,165);
+  color: white;
+  transform: translateY(-6px);
+}
+.front3 {
+  display: block;
+  padding: 6px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgb(255,183,197);
+  color: white;
+  transform: translateY(-6px);
+}
 .pushable:active .front {
   transform: translateY(-2px);
 }
