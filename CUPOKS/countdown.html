@@ -10,7 +10,11 @@ var countDownDate_L6 = new Date("26 Oct, 2023 19:40:00").getTime();
 
 
 f_assistant = function(distance) {
-  return 1
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  return [hours, minutes, seconds] 
 }
 
 // Update the count down every 1 second
@@ -21,17 +25,13 @@ var x = setInterval(function() {
 
   // Find the distance between now and the count down date
   var distance_L2 = countDownDate_L2 - now;
-
-  var distance = distance_L2 
+  var distance_L6 = countDownDate_L6 - now;
 
   // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+  var [hours, minutes, seconds] = f_assistant(distance_L2)
 
-  x = f_assistant()
+  var [hours_L6, minutes_L6, seconds_L6] = f_assistant(distance_L6)
 
   // Display the result in the element with id="demo"
   document.getElementById("demo").innerHTML = '<button onclick="history.back()">Go Back</button>'
@@ -39,7 +39,8 @@ var x = setInterval(function() {
   +"Countdown to the start of Level 2: " + hours + " hours "
   + minutes + " minutes " + seconds + " seconds "
   + '<br>' + 'xxxxxxx' + '<br>'
-  +"Countdown to the start of Level 6: " 
+  +"Countdown to the start of Level 6: " + hours_L6 + " hours "
+  + minutes_L6 + " minutes " + seconds_L6 + " seconds "
 
   
   // If the count down is finished, write some text
