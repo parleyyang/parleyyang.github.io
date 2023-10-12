@@ -6,6 +6,9 @@
 var countDownDate_L2 = new Date("26 Oct, 2023 18:20:00").getTime();
 
 // Set the date we're counting down to
+var countDownDate_L5 = new Date("26 Oct, 2023 19:20:00").getTime();
+
+
 var countDownDate_L6 = new Date("26 Oct, 2023 19:40:00").getTime();
 
 var countDownDate_L7 = new Date("26 Oct, 2023 20:20:00").getTime();
@@ -27,12 +30,16 @@ var x = setInterval(function() {
 
   // Find the distance between now and the count down date
   var distance_L2 = countDownDate_L2 - now;
+  var distance_L5 = countDownDate_L5 - now;
+
   var distance_L6 = countDownDate_L6 - now;
   var distance_L7 = countDownDate_L7 - now;
 
   // Time calculations for days, hours, minutes and seconds
 
   var [hours, minutes, seconds] = f_assistant(distance_L2)
+
+  var [hours_L5, minutes_L5, seconds_L5] = f_assistant(distance_L5)
 
   var [hours_L6, minutes_L6, seconds_L6] = f_assistant(distance_L6)
 
@@ -43,9 +50,12 @@ var x = setInterval(function() {
   document.getElementById("demo").innerHTML = '<button onclick="history.back()">Go Back</button>'
   + '<br>' 
   + '<center> Countdown Clock</center>'
-      + '<br>' + 'xxxxxxx' + '<br>'
-  +"Countdown to the start of Level 2: " + hours + " hours "
+  + '<br>' + 'xxxxxxx' + '<br> Current time: ' + Date() + '<br>' + 'xxxxxxx' + '<br>' 
+  + "Countdown to the start of Level 2: " + hours + " hours "
   + minutes + " minutes " + seconds + " seconds "
+  + '<br>' + 'xxxxxxx' + '<br>'
+  + "Countdown to the Walk-in Cut-off (start of Level 5): " + hours_L5 + " hours "
+  + minutes_L5 + " minutes " + seconds_L5 + " seconds "
   + '<br>' + 'xxxxxxx' + '<br>'
   +"Countdown to the start of Level 6: " + hours_L6 + " hours "
   + minutes_L6 + " minutes " + seconds_L6 + " seconds "
@@ -56,9 +66,11 @@ var x = setInterval(function() {
 
   
   // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+  if (distance_L7 < 0) {
+    // clearInterval(x);
+    document.getElementById("demo").innerHTML = "Clock EXPIRED (beyond Level 7)"
+      + '<br>' + 'xxxxxxx' + '<br> Current time: ' + Date() + '<br>' + 'xxxxxxx' + '<br>' 
+;
   }
 }, 1000);
 </script>
